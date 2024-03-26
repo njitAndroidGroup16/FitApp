@@ -55,3 +55,4 @@
     - ==> Home (After hitting the end time button)
   
 ## Wireframes
+![Wireframe](wireframe.png)
