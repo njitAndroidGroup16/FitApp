@@ -56,3 +56,5 @@
   
 ## Wireframes
 ![Wireframe](wireframe.png)
+## Prototype
+![Wireframe Walkthrough](wireframeProto.gif)
