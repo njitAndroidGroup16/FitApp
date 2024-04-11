@@ -1,4 +1,4 @@
-package com.example.tester
+package com.group16.fitapp
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

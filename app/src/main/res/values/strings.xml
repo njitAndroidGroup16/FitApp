@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FitApp</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
