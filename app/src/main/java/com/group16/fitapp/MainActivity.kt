@@ -1,43 +1,46 @@
 package com.group16.fitapp
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.group16.fitapp.ui.theme.FitAppTheme
 
-class MainActivity : ComponentActivity() {
+import androidx.fragment.app.Fragment
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
+
+
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            FitAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    Greeting("Android")
-                }
+        setContentView(R.layout.activity_main)
+
+        val firstFragment= ExerciseFragment()
+        val secondFragment= HomeFragment()
+        val thirdFragment= UserFragment()
+
+        setCurrentFragment(secondFragment)
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_navigation)
+
+
+        bottomNavigationView.setOnItemSelectedListener {item ->
+            lateinit var fragment: Fragment
+            when(item.itemId){
+                R.id.navigation_exercises->setCurrentFragment(firstFragment)
+                R.id.navigation_home->setCurrentFragment(secondFragment)
+                R.id.navigation_user->setCurrentFragment(thirdFragment)
+
             }
+
+            true
         }
-    }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-            text = "Hello $name!",
-            modifier = modifier
-    )
-}
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    FitAppTheme {
-        Greeting("Android")
+
+
     }
+
+    private fun setCurrentFragment(fragment: Fragment)=
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.article_frame_layout,fragment)
+            commit()
+        }
+
 }
