@@ -6,12 +6,86 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/breakdownLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="USER"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Your Activity Breakdown:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/activityFiller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/breakdownLabel"
+        app:srcCompat="@drawable/exercise"/>
+
+    <TextView
+        android:id="@+id/historyLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Activity History:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activityFiller" />
+
+    <ScrollView
+        android:id="@+id/activityList"
+        android:layout_width="409dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/historyLabel">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/timelineLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Timeline:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activityList" />
+
+    <ImageView
+        android:id="@+id/timelineContent"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timelineLabel"
+        tools:srcCompat="@drawable/user" />
+
+    <TextView
+        android:id="@+id/favoritesLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Favorites:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timelineContent" />
+
+    <ScrollView
+        android:id="@+id/favoritesList"
+        android:layout_width="409dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/favoritesLabel">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
