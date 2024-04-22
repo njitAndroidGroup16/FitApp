@@ -45,5 +45,13 @@
             android:orientation="vertical" />
     </ScrollView>
 
+    <TextView
+        android:id="@+id/AllExercises"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/equipmentType" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
