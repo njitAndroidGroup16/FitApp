@@ -17,11 +17,17 @@
 ## Product Specs
  
 **Required Must-Have Stories:**
+
   [X] User can view all exercises and make a selection from them
+  
   [x]User can filter results based on criteria such as difficulty
+  
   [x] User can favorite an exercise to view it anytime from the favorites page
+  
   [x] User can start a timer within the app to start an exercise
+  
   [x]Upon ending the timer, the exercise and its duration is added to the user's activity
+  
   - User is shown a bar graph representing their progress throughout the last 7 days
 
 **Nice to Have Stories:**
