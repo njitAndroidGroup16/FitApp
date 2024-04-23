@@ -58,3 +58,8 @@
 ![Wireframe](wireframe.png)
 ## Prototype
 ![Wireframe Walkthrough](wireframeProto.gif)
+**Issue Cards**
+![image](https://github.com/njitAndroidGroup16/FitApp/assets/148934926/7db6c393-cfa8-4913-bd1a-df57e658a71e)
+**Completed user stories**
+
+
