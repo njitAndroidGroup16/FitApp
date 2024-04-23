@@ -16,14 +16,16 @@ class ExerciseAdapter (private val exerciseList: List<Exercise>):
         return ExerciseViewHolder(view)
     }
     inner class ExerciseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val textView: TextView = itemView.findViewById(R.id.textView)
-        // Add more views if needed
+        val exerciseNameView: TextView = itemView.findViewById(R.id.exerciseName)
+        val targetMuscleView: TextView = itemView.findViewById(R.id.targetMuscle)
+
     }
 
 
     override fun onBindViewHolder(holder: ExerciseViewHolder, position: Int) {
         val item = exerciseList[position]
-        holder.textView.text = item.name
+        holder.exerciseNameView.text = item.name
+        holder.targetMuscleView.text = item.target
     }
 
     override fun getItemCount(): Int {
