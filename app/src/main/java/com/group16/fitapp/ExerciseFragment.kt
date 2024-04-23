@@ -59,13 +59,16 @@ class ExerciseFragment:Fragment(R.layout.frag_exercise) {
                         val gson = Gson()
                         Log.d("DEBUG", "Starting conversion the gson")
                         val arrayExerciseType = object : TypeToken<List<Exercise>>() {}.type
-                        //val exerciseList = gson.fromJson(responseBody, Array<Exercise>::class.java).toList()
+             //           val exerciseList = gson.fromJson(responseBody, Array<Exercise>::class.java).toList()
                         val exerciseList: List<Exercise> =
                             gson.fromJson(responseBody, arrayExerciseType)
-                        recyclerView.adapter = ExerciseAdapter(exerciseList)
+                        val myAdapter = ExerciseAdapter(exerciseList)
+                        activity?.runOnUiThread {
+                            recyclerView.adapter = myAdapter
+                        }
+
                         Log.d("BestSellerBooksFragment", "response successful")
-                        //myText.text = responseBody
-                        // Process the response data here
+
                     } else {
                         Log.e("API Call", "HTTP Error: ${response.code} - ${response.message}")
                     }
