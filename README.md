@@ -79,7 +79,7 @@ User can view a breakdown of their activity for each day. This includes what exe
 User can receive recommendations based on what exercises they perform most
 
 
-Updated Completed User stories for milestone 3
+**Updated Completed User stories for milestone 3**
 User can view all exercises and make a selection from them
 
 User can filter results based on criteria such as difficulty
