@@ -71,5 +71,7 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("com.loopj.android:android-async-http:1.4.10")
     implementation("org.apache.httpcomponents:httpcore:4.4.14")
-
+    implementation("com.google.code.gson:gson:2.8.8")
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
+    implementation("androidx.recyclerview:recyclerview:1.0.0")
 }
