@@ -61,5 +61,8 @@
 **Issue Cards**
 ![image](https://github.com/njitAndroidGroup16/FitApp/assets/148934926/7db6c393-cfa8-4913-bd1a-df57e658a71e)
 **Completed user stories**
+User can view all exercises and make a selection from them
+User can filter results based on criteria such as difficulty
+**Pending User stories
 
-
+**
