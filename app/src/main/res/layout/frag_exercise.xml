@@ -33,6 +33,7 @@
         app:layout_constraintTop_toBottomOf="@id/difficultyType"
         app:layout_constraintStart_toStartOf="parent"/>
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listOfExercises"
         android:layout_width="match_parent"
@@ -42,5 +43,6 @@
         app:layoutManager="LinearLayoutManager"
         tools:context=".ExerciseFragment"
         tools:listitem="@layout/individual_exercise" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

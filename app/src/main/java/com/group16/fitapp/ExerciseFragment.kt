@@ -94,3 +94,12 @@ class ExerciseFragment:Fragment(R.layout.frag_exercise) {
 
 
 }
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.exercise_fragment_list,container, false)
+        return view
+    }
+}
