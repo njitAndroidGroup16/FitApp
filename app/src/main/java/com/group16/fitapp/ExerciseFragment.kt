@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import com.google.gson.Gson
 import com.loopj.android.http.AsyncHttpClient
 import okhttp3.Call
@@ -28,26 +29,14 @@ class ExerciseFragment:Fragment(R.layout.frag_exercise) {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.frag_exercise, container, false)
 
-        val recyclerView: RecyclerView = view.findViewById(R.id.listOfExercises)
-        val layoutManager = LinearLayoutManager(activity)
-        recyclerView.layoutManager = layoutManager
-
-        val items = listOf(
-            Exercise(),
-            Exercise(),
-            Exercise(),
-            // Add more items as needed
-        )
-
-        val adapter = ExerciseAdapter(items)
-        recyclerView.adapter = adapter
-
+        val recyclerView = view.findViewById<View>(R.id.listOfExercises) as RecyclerView
+        val context = view.context
+        recyclerView.layoutManager = GridLayoutManager(context,2)
+        updateAdapter(recyclerView)
         return view
     }
+    private fun updateAdapter(recyclerView: RecyclerView) {
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        // Example HTTP request
         val client = OkHttpClient()
 
         val request = Request.Builder()
@@ -67,18 +56,11 @@ class ExerciseFragment:Fragment(R.layout.frag_exercise) {
                     val gson = Gson()
                     Log.d("DEBUG","Starting conversion the gson")
                     val exerciseList = gson.fromJson(responseBody, Array<Exercise>::class.java).toList()
-                    for (exercise in exerciseList){
-                        Log.d("ARRAYCONTENTS",exercise.name.toString())
-                        Log.d("ARRAYCONTENTS",exercise.target.toString())
-                        Log.d("ARRAYCONTENTS",exercise.steps.toString())
-                    }
-
+                    recyclerView.adapter = ExerciseAdapter(exerciseList)
+                    Log.d("BestSellerBooksFragment", "response successful")
                     //myText.text = responseBody
                     // Process the response data here
                 } else {
-                    // Handle unsuccessful response (e.g., HTTP error codes)
-                    // You can access the HTTP status code using response.code()
-                    // Example: Log the error message
                     Log.e("API Call", "HTTP Error: ${response.code} - ${response.message}")
                 }
             }
@@ -89,7 +71,16 @@ class ExerciseFragment:Fragment(R.layout.frag_exercise) {
                 // You can also notify the user about the error using a Toast or Snackbar
             }
         })
+
+
     }
+    /*
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        // Example HTTP request
+
+    }
+    */
 
 
 }

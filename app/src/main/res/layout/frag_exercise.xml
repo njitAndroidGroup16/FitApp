@@ -34,11 +34,13 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listOfExercises"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listOfExercises"
+        app:layout_constraintTop_toBottomOf="@id/equipmentType"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/equipmentType"  />
-
+        app:layoutManager="LinearLayoutManager"
+        tools:context=".ExerciseFragment"
+        tools:listitem="@layout/individual_exercise" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

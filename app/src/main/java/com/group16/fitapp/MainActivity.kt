@@ -18,27 +18,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val client = OkHttpClient()
-
-        val mediaType = "application/json".toMediaTypeOrNull()
-        val body = RequestBody.create(mediaType, "{\"query\":\"query MyQuery {\\n  exercises(exerciseQuery: {equipment: \\\"none\\\", force: \\\"none\\\"})\\n}\"}")
-
-        val request = Request.Builder()
-            .url("https://advanced-exercise-finder.p.rapidapi.com/")
-            .post(body)
-            .addHeader("x-rapidapi-key", "cd2731863amshf24057c73da0478p108fe6jsn3303de79f3d4")
-            .addHeader("x-rapidapi-host", "advanced-exercise-finder.p.rapidapi.com")
-            .addHeader("Content-Type", "application/json")
-            .build()
-        val thread = Thread {
-            val response = client.newCall(request).execute()
-            Log.d("CONTENT", response.body.toString())
-        }
-
-        thread.start() // Start the thread
-        Thread.sleep(3000)
-
-
 
         val firstFragment= ExerciseFragment()
         val secondFragment= HomeFragment()

@@ -9,15 +9,17 @@ import com.group16.fitapp.R
 class ExerciseAdapter (private val exerciseList: List<Exercise>):
 
     RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder>(){
-    inner class ExerciseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val textView: TextView = itemView.findViewById(R.id.textView)
-        // Add more views if needed
-    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.individual_exercise, parent, false)
         return ExerciseViewHolder(view)
     }
+    inner class ExerciseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val textView: TextView = itemView.findViewById(R.id.textView)
+        // Add more views if needed
+    }
+
 
     override fun onBindViewHolder(holder: ExerciseViewHolder, position: Int) {
         val item = exerciseList[position]
