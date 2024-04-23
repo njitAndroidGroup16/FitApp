@@ -69,3 +69,5 @@ User can filter results based on criteria such as difficulty
 User can view a breakdown of their activity for each day. This includes what exercise and its duration
 
 User can receive recommendations based on what exercises they perform most
+
+Updated Completed User stories for milestone 3
