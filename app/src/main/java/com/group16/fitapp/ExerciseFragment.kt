@@ -19,7 +19,13 @@ import okhttp3.Response
 import java.io.IOException
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.gson.reflect.TypeToken
 import com.group16.fitapp.Exercise
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+
+val coroutineScope = CoroutineScope(Dispatchers.IO)
 class ExerciseFragment:Fragment(R.layout.frag_exercise) {
     private val asyncHttpClient = AsyncHttpClient()
     override fun onCreateView(
@@ -37,40 +43,41 @@ class ExerciseFragment:Fragment(R.layout.frag_exercise) {
     }
     private fun updateAdapter(recyclerView: RecyclerView) {
 
-        val client = OkHttpClient()
+            val client = OkHttpClient()
 
-        val request = Request.Builder()
-            .url("https://exercisedb.p.rapidapi.com/exercises?limit=5")
-            .get()
-            .addHeader("X-RapidAPI-Key", "cd2731863amshf24057c73da0478p108fe6jsn3303de79f3d4")
-            .addHeader("X-RapidAPI-Host", "exercisedb.p.rapidapi.com")
-            .build()
-
-        //val response = client.newCall(request).execute()
-        client.newCall(request).enqueue(object : Callback {
-            override fun onResponse(call: Call, response: Response) {
-                if (response.isSuccessful) {
-                    // Handle successful response
-
-                    val responseBody = response.body?.string()
-                    val gson = Gson()
-                    Log.d("DEBUG","Starting conversion the gson")
-                    val exerciseList = gson.fromJson(responseBody, Array<Exercise>::class.java).toList()
-                    recyclerView.adapter = ExerciseAdapter(exerciseList)
-                    Log.d("BestSellerBooksFragment", "response successful")
-                    //myText.text = responseBody
-                    // Process the response data here
-                } else {
-                    Log.e("API Call", "HTTP Error: ${response.code} - ${response.message}")
+            val request = Request.Builder()
+                .url("https://exercisedb.p.rapidapi.com/exercises?limit=5")
+                .get()
+                .addHeader("X-RapidAPI-Key", "cd2731863amshf24057c73da0478p108fe6jsn3303de79f3d4")
+                .addHeader("X-RapidAPI-Host", "exercisedb.p.rapidapi.com")
+                .build()
+            client.newCall(request).enqueue(object : Callback {
+                override fun onResponse(call: Call, response: Response) {
+                    if (response.isSuccessful) {
+                        // Handle successful response
+                        val responseBody = response.body?.string()
+                        val gson = Gson()
+                        Log.d("DEBUG", "Starting conversion the gson")
+                        val arrayExerciseType = object : TypeToken<List<Exercise>>() {}.type
+                        //val exerciseList = gson.fromJson(responseBody, Array<Exercise>::class.java).toList()
+                        val exerciseList: List<Exercise> =
+                            gson.fromJson(responseBody, arrayExerciseType)
+                        recyclerView.adapter = ExerciseAdapter(exerciseList)
+                        Log.d("BestSellerBooksFragment", "response successful")
+                        //myText.text = responseBody
+                        // Process the response data here
+                    } else {
+                        Log.e("API Call", "HTTP Error: ${response.code} - ${response.message}")
+                    }
                 }
-            }
 
-            override fun onFailure(call: Call, e: IOException) {
-                // Handle network failure or other exceptions
-                Log.e("API Call", "Network Error: ${e.message}")
-                // You can also notify the user about the error using a Toast or Snackbar
-            }
-        })
+                override fun onFailure(call: Call, e: IOException) {
+                    // Handle network failure or other exceptions
+                    Log.e("API Call", "Network Error: ${e.message}")
+                    // You can also notify the user about the error using a Toast or Snackbar
+                }
+            })
+
 
 
     }
