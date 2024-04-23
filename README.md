@@ -79,3 +79,12 @@ User can view a breakdown of their activity for each day. This includes what exe
 User can receive recommendations based on what exercises they perform most
 
 Updated Completed User stories for milestone 3
+User can view all exercises and make a selection from them
+
+User can filter results based on criteria such as difficulty
+
+User can favorite an exercise to view it anytime from the favorites page
+
+User can start a timer within the app to start an exercise
+
+Upon ending the timer, the exercise and its duration is added to the user's activity
