@@ -19,16 +19,32 @@
         android:id="@+id/exercise_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@+id/exercise_image"
-        app:layout_constraintStart_toEndOf="@+id/exercise_image"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/exercise_image"
+        android:text="Exercise Name"/>
+
+    <TextView
+        android:id="@+id/exercise_difficulty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/exercise_image"
+        app:layout_constraintTop_toBottomOf="@+id/exercise_name"
+        android:text="Difficulty"/>
+
+    <TextView
+        android:id="@+id/exercise_equipment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/exercise_image"
+        app:layout_constraintTop_toBottomOf="@+id/exercise_difficulty"
+        android:text="Equipment needed"/>
 
     <TextView
         android:id="@+id/exercise_description"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/exercise_image"
-        app:layout_constraintTop_toBottomOf="@+id/exercise_name" />
+        app:layout_constraintTop_toBottomOf="@+id/exercise_equipment"
+        android:text="Description"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
