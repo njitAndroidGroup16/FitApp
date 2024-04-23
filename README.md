@@ -64,6 +64,7 @@
 User can view all exercises and make a selection from them
 
 User can filter results based on criteria such as difficulty
+
 **Pending User stories**
 User can view a breakdown of their activity for each day. This includes what exercise and its duration
 
