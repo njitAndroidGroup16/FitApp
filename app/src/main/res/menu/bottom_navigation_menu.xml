@@ -15,4 +15,9 @@
             android:title="User"
             android:icon="@drawable/user" />
 
+        <item
+            android:id="@+id/navigation_pedometer"
+            android:title="Pedometer"
+            android:icon="@drawable/pedometer" />
+
 </menu>
