@@ -5,40 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/filterLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Filter:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.154" />
-
-    <Spinner
-        android:id="@+id/exerciseType"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/filterLabel"
-        app:layout_constraintStart_toStartOf="parent"/>
-    <Spinner
-        android:id="@+id/difficultyType"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/exerciseType"
-        app:layout_constraintStart_toStartOf="parent"/>
-    <Spinner
-        android:id="@+id/equipmentType"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/difficultyType"
-        app:layout_constraintStart_toStartOf="parent"/>
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listOfExercises"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/equipmentType"
+        android:layout_width="wrap_content"
+        android:layout_height="700dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layoutManager="LinearLayoutManager"
         tools:context=".ExerciseFragment"

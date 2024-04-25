@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.gson.Gson
@@ -26,7 +27,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 val coroutineScope = CoroutineScope(Dispatchers.IO)
-class ExerciseFragment:Fragment(R.layout.frag_exercise) {
+class ExerciseFragment : Fragment(R.layout.frag_exercise), OnListFragmentInteractionListener {
     private val asyncHttpClient = AsyncHttpClient()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,7 +47,7 @@ class ExerciseFragment:Fragment(R.layout.frag_exercise) {
             val client = OkHttpClient()
 
             val request = Request.Builder()
-                .url("https://exercisedb.p.rapidapi.com/exercises?limit=5")
+                .url("https://exercisedb.p.rapidapi.com/exercises?limit=30")
                 .get()
                 .addHeader("X-RapidAPI-Key", "cd2731863amshf24057c73da0478p108fe6jsn3303de79f3d4")
                 .addHeader("X-RapidAPI-Host", "exercisedb.p.rapidapi.com")
@@ -62,7 +63,7 @@ class ExerciseFragment:Fragment(R.layout.frag_exercise) {
              //           val exerciseList = gson.fromJson(responseBody, Array<Exercise>::class.java).toList()
                         val exerciseList: List<Exercise> =
                             gson.fromJson(responseBody, arrayExerciseType)
-                        val myAdapter = ExerciseAdapter(exerciseList)
+                        val myAdapter = ExerciseAdapter(exerciseList, this@ExerciseFragment)
                         activity?.runOnUiThread {
                             recyclerView.adapter = myAdapter
                         }
@@ -84,13 +85,10 @@ class ExerciseFragment:Fragment(R.layout.frag_exercise) {
 
 
     }
-    /*
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        // Example HTTP request
 
+    override fun onItemClick(item: Exercise) {
+        Log.d("HELPME","we did it joe")
     }
-    */
 
 
 }
