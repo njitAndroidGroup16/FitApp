@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#6003e3fc">
+    android:background="#cbe6be">
 
     <FrameLayout
         android:id="@+id/article_frame_layout"
