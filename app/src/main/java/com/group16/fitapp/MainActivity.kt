@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         val firstFragment= ExerciseFragment()
         val secondFragment= HomeFragment()
         val thirdFragment= UserFragment()
+        val fourthFragment= Pedometer()
 
         setCurrentFragment(secondFragment)
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_navigation)
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_exercises->setCurrentFragment(firstFragment)
                 R.id.navigation_home->setCurrentFragment(secondFragment)
                 R.id.navigation_user->setCurrentFragment(thirdFragment)
+                R.id.navigation_pedometer->setCurrentFragment(fourthFragment)
 
             }
 
