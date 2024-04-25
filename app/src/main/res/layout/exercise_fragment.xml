@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/exercise_frag"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp">
+
+    <ImageView
+        android:id="@+id/exercise_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/exercise_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/exercise_image"
+        android:text="Exercise Name"/>
+
+    <TextView
+        android:id="@+id/exercise_difficulty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/exercise_image"
+        app:layout_constraintTop_toBottomOf="@+id/exercise_name"
+        android:text="Difficulty"/>
+
+    <TextView
+        android:id="@+id/exercise_equipment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/exercise_image"
+        app:layout_constraintTop_toBottomOf="@+id/exercise_difficulty"
+        android:text="Equipment needed"/>
+
+    <TextView
+        android:id="@+id/exercise_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/exercise_image"
+        app:layout_constraintTop_toBottomOf="@+id/exercise_equipment"
+        android:text="Description"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
