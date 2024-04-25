@@ -66,7 +66,7 @@ class UserFragment:Fragment(R.layout.frag_user) {
         dataSet.setCircleColor(Color.BLUE)
         dataSet.color = Color.BLUE
         dataSet.valueTextColor = Color.BLACK
-
+        lineChart.description.isEnabled=false
         val lineData = LineData(dataSet)
         lineChart.data = lineData
         lineChart.invalidate()
@@ -74,14 +74,14 @@ class UserFragment:Fragment(R.layout.frag_user) {
 
     private fun populatePieChart() {
         val entries = listOf(
-            PieEntry(30f, "Category A"),
-            PieEntry(20f, "Category B"),
-            PieEntry(50f, "Category C")
+            PieEntry(30f, "Abs"),
+            PieEntry(20f, "Quads"),
+            PieEntry(50f, "Lats")
         )
 
         val dataSet = PieDataSet(entries, "Categories")
         dataSet.colors = listOf(Color.RED, Color.GREEN, Color.BLUE)
-
+        pieChart.description.isEnabled=false
         val data = PieData(dataSet)
         pieChart.data = data
 
