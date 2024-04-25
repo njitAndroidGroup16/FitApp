@@ -17,11 +17,17 @@
 ## Product Specs
  
 **Required Must-Have Stories:**
-  - User can view all exercises and make a selection from them
-  - User can filter results based on criteria such as difficulty
-  - User can favorite an exercise to view it anytime from the favorites page
-  - User can start a timer within the app to start an exercise
-  - Upon ending the timer, the exercise and its duration is added to the user's activity
+
+  [X] User can view all exercises and make a selection from them
+  
+  [x]User can filter results based on criteria such as difficulty
+  
+  [x] User can favorite an exercise to view it anytime from the favorites page
+  
+  [x] User can start a timer within the app to start an exercise
+  
+  [x]Upon ending the timer, the exercise and its duration is added to the user's activity
+  
   - User is shown a bar graph representing their progress throughout the last 7 days
 
 **Nice to Have Stories:**
@@ -58,3 +64,29 @@
 ![Wireframe](wireframe.png)
 ## Prototype
 ![Wireframe Walkthrough](wireframeProto.gif)
+**Issue Cards**
+![image](https://github.com/njitAndroidGroup16/FitApp/assets/148934926/7db6c393-cfa8-4913-bd1a-df57e658a71e)
+**Completed user stories**
+
+User can view all exercises and make a selection from them
+
+User can filter results based on criteria such as difficulty
+
+**Pending User stories**
+
+User can view a breakdown of their activity for each day. This includes what exercise and its duration
+
+User can receive recommendations based on what exercises they perform most
+
+
+**Updated Completed User stories for milestone 3**
+
+User can view all exercises and make a selection from them
+
+User can filter results based on criteria such as difficulty
+
+User can favorite an exercise to view it anytime from the favorites page
+
+User can start a timer within the app to start an exercise
+
+Upon ending the timer, the exercise and its duration is added to the user's activity
