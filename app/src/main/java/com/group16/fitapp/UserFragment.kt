@@ -12,8 +12,14 @@ import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
+import com.github.mikephil.charting.charts.PieChart
+import com.github.mikephil.charting.data.PieData
+import com.github.mikephil.charting.data.PieDataSet
+import com.github.mikephil.charting.data.PieEntry
+
 class UserFragment:Fragment(R.layout.frag_user) {
     private lateinit var lineChart: LineChart
+    private lateinit var pieChart: PieChart
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,6 +27,8 @@ class UserFragment:Fragment(R.layout.frag_user) {
     ): View? {
         val view = inflater.inflate(R.layout.frag_user, container, false)
         lineChart = view.findViewById(R.id.lineChart)
+        pieChart = view.findViewById(R.id.pieChart)
+
         return view
     }
 
@@ -28,6 +36,7 @@ class UserFragment:Fragment(R.layout.frag_user) {
         super.onViewCreated(view, savedInstanceState)
         setupLineChart()
         setData() // Set your data points here
+        populatePieChart()
     }
 
     private fun setupLineChart() {
@@ -61,5 +70,22 @@ class UserFragment:Fragment(R.layout.frag_user) {
         val lineData = LineData(dataSet)
         lineChart.data = lineData
         lineChart.invalidate()
+    }
+
+    private fun populatePieChart() {
+        val entries = listOf(
+            PieEntry(30f, "Category A"),
+            PieEntry(20f, "Category B"),
+            PieEntry(50f, "Category C")
+        )
+
+        val dataSet = PieDataSet(entries, "Categories")
+        dataSet.colors = listOf(Color.RED, Color.GREEN, Color.BLUE)
+
+        val data = PieData(dataSet)
+        pieChart.data = data
+
+        // Refresh the chart
+        pieChart.invalidate()
     }
 }

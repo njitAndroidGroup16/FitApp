@@ -43,6 +43,7 @@ class HomeFragment:Fragment(R.layout.frag_home) {
         xAxis.setDrawGridLines(false)
         xAxis.setDrawAxisLine(true)
 
+
         val leftAxis = barChart.axisLeft
         leftAxis.setDrawGridLines(false)
         leftAxis.setDrawAxisLine(true)
